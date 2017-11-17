@@ -1,0 +1,49 @@
+<div class="container" ng-controller="pollsController">
+	<h5><span ng-bind="the_poll.question"></h5>
+	<p>Click the Vote button to choose one.</p>
+	<table class="table">
+		<thead>
+			<th>Option</th>
+			<th>Current Count of Votes</th>
+			<th class=" right-align">Action</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td><span ng-bind="the_poll.option1"></span></td>
+				<td><span ng-bind="the_poll.option1_votes"></span></td>
+				<td class="right-align">
+					<div class="input-field ">
+					<button ng-click="addVote(1)" class="waves-effect waves-light btn">Vote</button>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td><span ng-bind="the_poll.option2"></span></td>
+				<td><span ng-bind="the_poll.option2_votes"></span></td>
+				<td class="right-align">
+					<div class="input-field ">
+					<button ng-click="addVote(2)" class="waves-effect waves-light btn">Vote</button>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td><span ng-bind="the_poll.option3"></span></td>
+				<td><span ng-bind="the_poll.option3_votes"></span></td>
+				<td class="right-align">
+					<div class="input-field ">
+					<button ng-click="addVote(3)" class="waves-effect waves-light btn">Vote</button>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td><span ng-bind="the_poll.option4"></span></td>
+				<td><span ng-bind="the_poll.option4_votes"></span></td>
+				<td class="right-align">
+					<div class="input-field ">
+					<button ng-click="addVote(4)" class="waves-effect waves-light btn">Vote</button>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

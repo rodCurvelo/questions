@@ -1,0 +1,28 @@
+<div class="container" ng-controller="pollsController">
+	<div class="row">
+		<h5 class="col s6">Current Polls:</h5>
+		<form class="col s6 right-align">
+			<input type="text" placeholder="Search" ng-model="filter_question">
+		</form>
+	</div>
+	<table class="table">
+		<thead>
+			<th>Name</th>
+			<th>Survey Question</th>
+			<th>Date Posted</th>
+			<th class=" right-align">Action</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat = "poll in polls | filter: filter_question">
+				<td><span ng-bind="poll._created_by_name"></span></td>
+				<td><a ng-href="#/poll/{{poll._id}}"><span ng-bind="poll.question"></span></a></td>
+				<td><span ng-bind="poll.created_at"></td>
+				<td ng-if="poll.created_by.id == currentUser._id" class="right-align">
+					<div class="input-field " style="text-align: right">
+						<a ng-click="removePoll(poll._id)" class="waves-effect waves-light btn">Delete</a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

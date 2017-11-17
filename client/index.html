@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<title>Exam</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+	    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+	    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-cookies.js"></script>
+
+	    <script type="text/javascript" src="module.js"></script>
+		<script type="text/javascript" src="user_factory.js"></script>
+		<script type="text/javascript" src="poll_factory.js"></script>
+
+		<!-- Compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+		  <!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+			    // Select - Single
+			    $('select:not([multiple])').material_select();
+			});
+		</script>
+	</head>
+	<body>
+		<nav ng-controller="usersController">
+		    <div class="nav-wrapper teal lighten-2">
+		    	<div class="container">
+		      		<a href="#/dashboard/{{currentUser._id}}" class="brand-logo">Surveys </a>
+		      		<h6 ng-if="currentUser.name" style="display: inline-block; position: relative; left: 130px">Welcome, <span ng-bind="currentUser.name"></span></h6>
+		      		<ul id="nav-mobile" class="right hide-on-med-and-down">
+		        		<li><a href="#/new">Create a New Poll</a></li>
+		        		<li><a ng-click="logoutUser()">Logout</a></li>
+		      		</ul>
+		     	 </div>
+		    </div>
+		</nav>
+		<div ng-view="" style="margin-top: 20px">
+	    </div> 
+	</body>
+</html>
